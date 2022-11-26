@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function Mountains() {
+function Mountains({showMountain}) {
     //declare the state
     const [mountains, setMountains] = useState([]);
 
@@ -25,7 +25,16 @@ function Mountains() {
   return (
     <div className="MountainsListPage">
     <h1>List of Mountains:</h1>
-    {mountains.map((mountain) => {
+    {showMountain? showMountain.map((mountain) => {
+        return (
+            <div key={mountain._id}>
+                <Link to={`/mountains/${mountain._id}`}>
+                    <h3>{mountain.mountain_name}</h3>
+                </Link>
+            </div>
+        )
+    }): 
+    mountains.map((mountain) => {
         return (
             <div key={mountain._id}>
                 <Link to={`/mountains/${mountain._id}`}>
