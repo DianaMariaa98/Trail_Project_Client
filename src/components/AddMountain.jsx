@@ -1,11 +1,13 @@
 import {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 function AddTrail(props) {
-    const [name, setName] = useState('');
-    const [profileImage, setProfileImage] = useState('');
-    const [mountain, setMountain] = useState('');
+    const navigate = useNavigate();
+    const [continent, setContinent] = useState('');
+    const [country, setCountry] = useState('');
+    const [mountain_name, setMountain_Name] = useState('');
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [distance, setDistance] = useState('');
@@ -20,9 +22,9 @@ function AddTrail(props) {
     const [overview, setOverview] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const handleName = (e) => setName(e.target.value);
-    const handleProfileImage = (e) => setProfileImage(e.target.value);
-    const handleMountain = (e) => setMountain(e.target.value);
+    const handleContinent = (e) => setContinent(e.target.value);
+    const handleCountry = (e) => setCountry(e.target.value);
+    const handleMountain_Name = (e) => setMountain_Name(e.target.value);
     const handleDescription = (e) => setDescription(e.target.value);
     const handleDistance = (e) => setDistance(e.target.value);
     const handleAverage_time = (e) => setAverage_Time(e.target.value);
@@ -31,7 +33,7 @@ function AddTrail(props) {
     const handleSeason = (e) => setSeason(e.target.value);
     const handleDifficulty = (e) => setDifficulty(e.target.value);
     const handleMaps = (e) => setMaps(e.target.value);
-    const handleAcoomodation = (e) => setAccomodation(e.target.value);
+    const handleAccomodation = (e) => setAccomodation(e.target.value);
     const handleConditions = (e) => setConditions(e.target.value);
     const handleOverview = (e) => setOverview(e.target.value);
 
@@ -58,11 +60,11 @@ function AddTrail(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL}/trail`, {
-                name,
-                profileImage,
-                mountain,
-                image: image,
+            await axios.post(`${process.env.REACT_APP_API_URL}/mountains`, {
+                continent,
+                country,
+                mountain_name,
+                image,
                 description,
                 distance,
                 average_time,
@@ -76,9 +78,9 @@ function AddTrail(props) {
                 overview
             })
             //clear the inputs
-            setName('');
-            setProfileImage('');
-            setMountain('');
+            setContinent('');
+            setCountry('');
+            setMountain_Name('');
             setImage('');
             setDescription('');
             setDistance('');
@@ -92,28 +94,29 @@ function AddTrail(props) {
             setAccomodation('');
             setOverview('');
 
-            //refresh the list
-            props.refreshTrails();
+            navigate("/mountains")
+
         } catch (error) {
             console.log(error);
         }
     }
 
+
   return (
     <div className='AddTrail'>
         <form onSubmit={handleSubmit}>
 
-            <label htmlFor="name">Name:</label>
-            <input type="text" name="name" value={name} onChange={handleName} />
+            <label htmlFor="continent">Continent:</label>
+            <input type="text" name="continent" value={continent} onChange={handleContinent} />
 
-            <label htmlFor="profileImage">ProfilePic:</label>
-            <input type="text" name="profileImage" value={profileImage} onChange={handleProfileImage} />
+            <label htmlFor="country">Country:</label>
+            <input type="text" name="country" value={country} onChange={handleCountry} />
 
             <label htmlFor="mountain">Mountain:</label>
-            <input type="text" name="mountain" value={mountain} onChange={handleMountain} />
+            <input type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
 
             <label htmlFor="image">Image:</label>
-            <input type="file" name="image" value={image} onChange={handleUpload} />
+            <input type="file" name="image" onChange={handleUpload} />
 
             <label htmlFor="description">Description:</label>
             <input type="text" name="description" value={description} onChange={handleDescription} />
@@ -143,13 +146,13 @@ function AddTrail(props) {
             <input type="text" name="conditions" value={conditions} onChange={handleConditions} />
 
             <label htmlFor="accomodation">Accomodation:</label>
-            <input type="text" name="accomodation" value={accomodation} onChange={handleAcoomodation} />
+            <input type="text" name="accomodation" value={accomodation} onChange={handleAccomodation} />
 
             <label htmlFor="overview">Overview:</label>
             <input type="text" name="overview" value={overview} onChange={handleOverview} />
 
 
-            {loading ? <p>Loading...</p> :<button>Add your trail !</button>}
+            {loading ? <p>Loading...</p> :<button type='submit'>Add your trail !</button>}
 
         </form>
     </div>

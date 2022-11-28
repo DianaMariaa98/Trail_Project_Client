@@ -28,8 +28,9 @@ function MountainsDetails() {
         {mountain && (
             <>
             <h1>{mountain.mountain_name}</h1>
+            <h2>{mountain.country}</h2>
             <img className="description_image"src ={mountain.image}></img>
-            <p>Description:</p><p className="p_details">Description: {mountain.description}</p>
+            <p className="p_details">Description: {mountain.description}</p>
             <p className="p_details">Distance: {mountain.distance}</p>
             <p className="p_details">Average Time: {mountain.average_time}</p>
             <p className="p_details">Start Point: {mountain.start_point}</p>

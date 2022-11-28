@@ -6,9 +6,10 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Mountains from './pages/Mountains';
 import MountainsDetails from './pages/MountainsDetails';
-import AddTrail from './pages/AddTrail';
+import AddMountain from './components/AddMountain';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
+import Anon from './components/Anon';
 
 function App() {
 
@@ -31,8 +32,15 @@ function App() {
       <Route path='/signup' element ={<Signup/>}/>
       <Route path='/mountains' element ={<Mountains showMountain = {showMountain}/>}/>
       <Route path='/mountains/:id' element ={<MountainsDetails/>}/>
-      <Route path='/trails' element ={<AddTrail/>}/>
-      </Routes>
+      <Route path='/trails' element ={<AddMountain/>}/>
+      <Route path ="/signup" element ={
+        <Anon>
+          <Signup/>
+        </Anon>
+      }
+      />
+      <Route path="/login" element={<Login/>} />
+     </Routes>
     </div>
   );
   
