@@ -19,7 +19,7 @@ function Login(props) {
         e.preventDefault();
         try {
             //try to create the user
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/login`, {email, password});
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {email, password});
 
             //store the token that we got from the login request
             storeToken(response.data.authToken);

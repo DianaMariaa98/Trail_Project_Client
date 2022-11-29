@@ -1,18 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../contexts/auth.context';
 
 
 
 function MountainsDetails() {
     const [mountain, setMountain] = useState(null);
+    const [userId, setUserId] = useState('');
 
     const {id} = useParams();
+    const {user} = useContext(AuthContext);
+    
 
     const getMountain = async () => {
         try {
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/mountains/${id}`);
-
+            setUserId(response.data.userId)
             setMountain(response.data);
             console.log(response.data)
         } catch (error) {
@@ -42,7 +46,12 @@ function MountainsDetails() {
             <span>Conditions:</span><p dangerouslySetInnerHTML={{ __html: mountain.conditions}}></p>
             <span>Accomodation:</span><p dangerouslySetInnerHTML={{ __html: mountain.accomodation}}></p>
             <span>Overview:</span><p dangerouslySetInnerHTML={{ __html: mountain.overview}}></p>
-            <p></p>
+            
+            {user._id === userId && <Link to={`/editTrail/${id}`}>Edit Trail</Link>}
+
+
+            {/* <Link to={`/editTrail/${id}`}>Edit Trail</Link> */}
+
             </>
         )}
     </div>

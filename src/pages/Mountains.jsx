@@ -12,7 +12,6 @@ function Mountains({showMountain}) {
 
     const getMountains = async () => {
         try {
-
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/mountains`);
             setMountains(response.data);
             console.log(response.data);

@@ -1,16 +1,13 @@
-import {useState} from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
-import { useParams} from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
+import { AuthContext } from '../contexts/auth.context';
+import { upload } from "@testing-library/user-event/dist/upload";
 
-
-function AddTrail(props) {
-    
-    const navigate = useNavigate();
+function EditMountain() {
     const [continent, setContinent] = useState('');
     const [country, setCountry] = useState('');
     const [mountain_name, setMountain_Name] = useState('');
-    const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [distance, setDistance] = useState('');
     const [average_time, setAverage_Time] = useState('')
@@ -22,7 +19,16 @@ function AddTrail(props) {
     const [conditions, setConditions] = useState('');
     const [accomodation, setAccomodation] = useState('');
     const [overview, setOverview] = useState('');
+    const [userId, setUserId] = useState('');
+    const [image, setImage] = useState('');
     const [loading, setLoading] = useState(false);
+    
+    
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const {user} = useContext(AuthContext);
+    
+    
 
     const handleContinent = (e) => setContinent(e.target.value);
     const handleCountry = (e) => setCountry(e.target.value);
@@ -39,6 +45,39 @@ function AddTrail(props) {
     const handleConditions = (e) => setConditions(e.target.value);
     const handleOverview = (e) => setOverview(e.target.value);
 
+    const getMountain = async () => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/mountains/${id}`);
+            
+            setContinent(response.data.continent);
+            setCountry(response.data.country);
+            setMountain_Name(response.data.mountain_name);
+            setDescription(response.data.description);
+            setDistance(response.data.distance);
+            setAverage_Time(response.data.average_time);
+            setStart_Point(response.data.start_point);
+            setEnd_Point(response.data.end_point);
+            setSeason(response.data.season);
+            setDifficulty(response.data.difficulty);
+            setMaps(response.data.maps);
+            setConditions(response.data.conditions);
+            setAccomodation(response.data.accomodation);
+            setOverview(response.data.overview);
+            setUserId(response.data.userId)
+            
+
+            console.log(response.data)
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getMountain();
+    },[])
+
+   
     const handleUpload = async (e) => {
         try {
             setLoading(true);
@@ -63,7 +102,8 @@ function AddTrail(props) {
         e.preventDefault();
         try {
             const storedToken = localStorage.getItem('authToken');
-            await axios.post(`${process.env.REACT_APP_API_URL}/mountains`, {
+            await axios.put(`${process.env.REACT_APP_API_URL}/mountains/${id}`, 
+            { 
                 continent,
                 country,
                 mountain_name,
@@ -78,35 +118,45 @@ function AddTrail(props) {
                 maps,
                 conditions,
                 accomodation,
-                overview
-            }, {headers: {Authorization: `Bearer ${storedToken}`}})
-            //clear the inputs
-            setContinent('');
-            setCountry('');
-            setMountain_Name('');
-            setImage('');
-            setDescription('');
-            setDistance('');
-            setAverage_Time('');
-            setStart_Point('');
-            setEnd_Point('');
-            setSeason('');
-            setDifficulty('');
-            setMaps('');
-            setConditions('');
-            setAccomodation('');
-            setOverview('');
+                overview,
 
-            navigate("/mountains")
+            }, {headers: {Authorization: `Bearer ${storedToken}`}});
+            
+        //clear the inputs
+        setContinent('');
+        setCountry('');
+        setMountain_Name('');
+        setDescription('');
+        setDistance('');
+        setAverage_Time('');
+        setStart_Point('');
+        setEnd_Point('');
+        setSeason('');
+        setDifficulty('');
+        setMaps('');
+        setConditions('');
+        setAccomodation('');
+        setOverview('');
+        setImage('');
 
+        navigate(`/mountains/${id}`)
         } catch (error) {
             console.log(error);
         }
     }
 
-
+    const deleteMountain = async () => {
+        try {
+           const storedToken = localStorage.getItem(`authToken`)
+           await axios.delete(`${process.env.REACT_APP_API_URL}/mountains/${id}`,{headers: {Authorization: `Bearer ${storedToken}`}});
+           navigate('/mountains')
+        } catch (error) {
+            console.log(error);
+        }
+    }
   return (
-    <div className='AddTrail'>
+    <div className='EditMountainPage'>
+        <h3>Edit Trail</h3>
         <form onSubmit={handleSubmit}>
 
             <label htmlFor="continent">Continent:</label>
@@ -115,11 +165,11 @@ function AddTrail(props) {
             <label htmlFor="country">Country:</label>
             <input type="text" name="country" value={country} onChange={handleCountry} />
 
-            <label htmlFor="mountain">Mountain:</label>
-            <input type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
-
             <label htmlFor="image">Image:</label>
             <input type="file" name="image" onChange={handleUpload} />
+
+            <label htmlFor="mountain">Mountain:</label>
+            <input type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
 
             <label htmlFor="description">Description:</label>
             <input type="text" name="description" value={description} onChange={handleDescription} />
@@ -154,12 +204,17 @@ function AddTrail(props) {
             <label htmlFor="overview">Overview:</label>
             <input type="text" name="overview" value={overview} onChange={handleOverview} />
 
-
-            {loading ? <p>Loading...</p> :<button type='submit'>Add your trail !</button>}
+            {loading ? <p>Loading...</p> :user._id === userId && <button type='submit'>Edit Trail</button>}
+            {/* {user._id === userId && <button type='submit'>Edit Trail</button>} */}
+            
 
         </form>
+        
+        {user._id === userId && <button onClick={deleteMountain}>
+                Delete the trail !
+        </button>}
     </div>
   )
 }
 
-export default AddTrail
+export default EditMountain

@@ -21,7 +21,7 @@ function Signup(props) {
             //try to create the user
             await axios.post(`${process.env.REACT_APP_API_URL}/signup`, {email, password, name});
             //redirect
-            navigate('/login')
+            navigate('/profile')
         } catch (error) {
             const errorDescription = error.response.data.message;
             setErrorMessage(errorDescription);

@@ -10,6 +10,8 @@ import AddMountain from './components/AddMountain';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 import Anon from './components/Anon';
+import Profile from './pages/Profile';
+import EditMountain from './pages/EditMountain';
 
 function App() {
 
@@ -40,6 +42,8 @@ function App() {
       }
       />
       <Route path="/login" element={<Login/>} />
+      <Route path='/profile' element={<Profile/>}/>
+      <Route path='/editTrail/:id' element={<EditMountain/>}/>
      </Routes>
     </div>
   );

@@ -32,6 +32,7 @@ function NavScrollExample({filterMountains}) {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="/signup">Signup</Nav.Link>
+              <Nav.Link href="/profile">Profile</Nav.Link>
               <NavDropdown title="Hikes" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Asia</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
@@ -53,7 +54,7 @@ function NavScrollExample({filterMountains}) {
                 onChange={handleQuery}
                 value={query}
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-success"><Link to="/mountains">Search</Link></Button>
             </Form>
           </Navbar.Collapse>
         </Container>
