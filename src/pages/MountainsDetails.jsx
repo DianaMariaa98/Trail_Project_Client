@@ -151,7 +151,7 @@ function MountainsDetails() {
         comments.map((comment) => {
             return (
                 <div className='edit_delete' key={comment._id}>
-                    <p className='username_comment'>Username: {user.name}</p>
+                    <p className='username_comment'>Username: {comment.user.name}</p>
                     <Comment comment={comment} user = {user} getComments = {getComments} />
 
                 </div>
