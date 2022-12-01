@@ -275,6 +275,9 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
+.username_comment{
+  font-weight: bold;
+}
 .btndeleteedit{
   display: flex;
   padding-top: 0.4vw;
@@ -283,6 +286,7 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
   padding-left: 0.3vw;
 }
 .edit_delete{
+  margin-right: 1vw;
   padding: 1vw;
   border: 1px solid black;
   width:fit-content;
