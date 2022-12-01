@@ -17,7 +17,7 @@ function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>Challange Yourself - Climb a mountain! </h3>
+          <h3>Challenge Yourself - Climb a mountain! </h3>
           <p>"Deserts, jungles, mountains or coast. I've never had a preference. If I'm out in nature with everything I need in the world on my back, chances are my smile is wide and my thoughts are clear."</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -48,7 +48,7 @@ function Home() {
     </Carousel>
     </div>
     <div className="footer">
-      <div className='p_footer'>Developed by Diana</div>
+      <div className='p_footer'>Developed by Diana Maria</div>
       </div>
 
     </>

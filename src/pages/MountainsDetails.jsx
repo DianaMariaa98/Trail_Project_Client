@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../contexts/auth.context';
 import Comment from '../components/Comment';
-import heart_icon from '../images/heart-icon.png'
+import heart_icon from '../images/heart-icon.png';
+
 
 
 function MountainsDetails() {
@@ -92,13 +93,12 @@ function MountainsDetails() {
             <h1 className='mountain_name_det'>{mountain.mountain_name}</h1>
             <h2 className='mountain_country_det'>{mountain.country}</h2>
             </div>
+            <div className='imageAnddetails'>
+            
             <img className="description_image" alt=""src ={mountain.image}></img>
+            <div className='right_side'>
             <div className="div_det">
             <h4 className="mount_details">Distance:</h4><p className='p_class'>{mountain.distance}</p></div>
-
-            <div className='mount_description_writing'>
-            <p className='mount_details_description'>{mountain.description}</p>
-            
             <div className="div_det">
             <h4 className="mount_details">Average Time:</h4><p className='p_class'>{mountain.average_time}</p></div>
             <div className="div_det">
@@ -106,6 +106,12 @@ function MountainsDetails() {
             <div className="div_det">
             <h4 className="mount_details">End Point:</h4><p className='p_class'>{mountain.end_point}</p></div>
             <h4 className="mount_details">Season:</h4><p className='p_class' dangerouslySetInnerHTML={{ __html: mountain.season}}></p>
+            </div>
+            </div>
+
+            <div className='mount_description_writing'>
+            <p className='mount_details_description'>{mountain.description}</p>
+            
             <div className="div_det">
             <h4 className="mount_details">Difficulty:</h4><p className='p_class'>{mountain.difficulty}</p></div>
             <h4 className="mount_details">Maps:</h4><p className='p_class'dangerouslySetInnerHTML={{ __html: mountain.maps}}></p>
@@ -115,7 +121,6 @@ function MountainsDetails() {
             <h4 className="mount_details">Overview:</h4><p className='p_class'dangerouslySetInnerHTML={{ __html: mountain.overview}}></p>
 
             {user && user._id === userId && <Link to={`/editTrail/${id}`}>Edit Trail</Link>}
-            
             </div>
             <Link to ="/profile"><button className="heart_like" onClick ={addLikes}>Add to favorites <img className="heart_like_img" alt="" src={heart_icon}></img></button></Link>
             </div>
@@ -137,15 +142,16 @@ function MountainsDetails() {
         <div className='form-commentbox'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="content"></label>
-          <textarea name="content" cols="50" rows="10" onChange={handleComment}></textarea>
-          <div> <button className='add-comment_btn' type='submit'>Add Comment</button></div>
+          <textarea className="content" cols="50" rows="8" onChange={handleComment}></textarea>
+          <div> <button className='button_sign' type='submit'>Add Comment</button></div>
         </form>
       </div>
 
         {comments && (
         comments.map((comment) => {
             return (
-                <div key={comment._id}>
+                <div className='edit_delete' key={comment._id}>
+                    <p>Username: {user.name}</p>
                     <Comment comment={comment} user = {user} getComments = {getComments} />
 
                 </div>

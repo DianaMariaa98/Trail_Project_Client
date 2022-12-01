@@ -26,7 +26,7 @@ function NavScrollExample({filterMountains}) {
     return (
       <Navbar className ="navigation_bar" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="/"><img src={mountain_logo} alt ="" style={{height: '10vh'}}/></Navbar.Brand>
+          <Navbar.Brand href="/"><img src={mountain_logo} alt ="" style={{height: '14vh'}}/></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -60,7 +60,7 @@ function NavScrollExample({filterMountains}) {
                 onChange={handleQuery}
                 value={query}
               />
-              <Button variant="outline-success"><Link className='searchNav' to="/mountains"><img className="searchIcon" src={searchIcon} alt=""></img></Link></Button>
+              <Button variant="outline-success" style={{backgroundColor:'#7a726cbd', border:'none'}}><Link className='searchNav' to="/mountains"><img className="searchIcon" src={searchIcon} alt=""></img></Link></Button>
             </Form>
           </Navbar.Collapse>
         </Container>

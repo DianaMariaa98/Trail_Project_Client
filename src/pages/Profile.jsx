@@ -5,6 +5,7 @@ import { useState } from "react";
 import { upload } from "@testing-library/user-event/dist/upload";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import insertPic from '../images/insert.png';
 
 
 function Profile() {
@@ -78,11 +79,16 @@ function Profile() {
             <div className="profileName">
             
             <h1>Your profile page 😊</h1>
-            <p>Hello there : {profile.name}</p>
+            <p>Hello there, {profile.name}</p>
             <form onSubmit={handleSubmit}>
+
+
+            <label className="profilePicture" htmlFor="profilePicture">
+            <img className ="prof_img" alt ="" src={insertPic}></img>
+            <input className="inputProfilepic" id='profilePicture' type="file" name="profilePicture" onChange={handleUpload}/>
+            </label>
             
-            <label htmlFor="profilePicture"></label>
-            <input type="file" name="profilePicture" onChange={handleUpload}/>
+
             <img className="profile_image"src={profile.profilePicture} alt="profile"/>
             
             {/* {profilePicture && <img src={profilePicture}></img>} */}

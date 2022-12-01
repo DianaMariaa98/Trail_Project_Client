@@ -24,7 +24,12 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
 
 .searchNav{
   text-decoration: none;
-  
+  color: #ad7c5b;
+}
+
+.btn-outline-success:hover{
+  text-decoration: none;
+  background-color: #ad7c5b;
 }
 .MountainsListPage{
   display: flex;
@@ -43,17 +48,18 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
 }
 .mountain_name_list{
   text-decoration: none;
-  color:rgb(62, 130, 56);
+  color:rgb(122, 85, 43);
 }
 .link_mountain_name_list{
   text-decoration: none;
 }
 .mountain_list_img{
-  box-shadow:3px 3px rgba(172, 190, 171, 0.534), 0em 0 1.4em rgb(107, 134, 112);
+  box-shadow:3px 3px rgba(122, 115, 79, 0.534), 0em 0 1.4em rgb(98, 91, 35);
 }
 .searchIcon{
   height: 1.5vw;
 }
+
 .footer{
   /* background-color: rgba(124, 91, 25, 0.688); */
   background: rgb(43,38,22);
@@ -81,14 +87,22 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
 .heart_like_img{
   height: 2vw;
 }
+.mountain_name_det, .mountain_country_det{
+  padding-left: 1vw;
+  font-weight: bold;
+  color: #ad7c5b;
+}
 
 .description_image{
+  border-radius: 2vw;
+  box-shadow:4px 5px rgba(238, 185, 106, 0.534);
   align-self: center;
   width: 50vw;
   height: 50vh;
+  padding-left: 1vw;
 }
 .mount_description_writing{
-  font-family:'Noto Sans, sans-serif';
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-left: 1vw;
   padding-right: 1vw;
   padding-top: 1vw;
@@ -100,6 +114,7 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
 .mount_details{
   text-decoration: underline;
   font-size: 1.3vw;
+  font-weight: bold;
 }
 .form-commentbox{
   padding-left: 1.5vw;
@@ -108,8 +123,18 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
   display: flex;
 }
 .mountainDetails{
+  background-color: #efebe882;
   padding-top: 1vw;
   padding-bottom: 2vw;
+}
+.imageAnddetails{
+  display: flex;
+}
+.right_side{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2vw;
+  padding-top: 1vw;
 }
 .p_class{
   font-size: 1.2vw;
@@ -121,6 +146,7 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
   box-shadow:5px 2px rgba(238, 185, 106, 0.534), 0em 0 0.4em rgb(147, 104, 82);
 }
 .profileName{
+
   color: #ad7c5b;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 35vw;
@@ -210,6 +236,60 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
   touch-action: manipulation;
   vertical-align: top;
   white-space: nowrap;
+}
+.button_sign_delete,.button_sign_edit{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #7a6355;
+  border-radius: 1vw;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.edit_comment_button{
+  border-style: none;
+  background:none;
+  color:rgb(103, 70, 21);
+  font-size: 1.2vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+.btndeleteedit{
+  display: flex;
+  padding-top: 0.4vw;
+}
+.bttndeled{
+  padding-left: 0.3vw;
+}
+.edit_delete{
+  padding: 1vw;
+  border: 1px solid black;
+  width:fit-content;
+  margin-left: 2vw;
+  margin-top: 1vw;
+  border-radius: 1vw;
+  background-color: white;
 }
 
 .signup_det{
@@ -323,7 +403,7 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
 .profile_image{
   width: 8vw;
   height: 8vw;
-  border-radius: 10vw;
+  border-radius: 1vw;
 }
 .p_trails{
   color: #ad7c5b;
@@ -340,3 +420,14 @@ background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(1
 .carouseldiv{
   height: 79vh;
 }
+.inputProfilepic{
+    display: none;
+}
+.prof_img{
+  width: 3vw;
+}
+.content{
+  border-radius: 1vw;
+}
+
+

@@ -43,12 +43,19 @@ function Comment(props) {
         {!display && <form onSubmit={editComment}>
         <label htmlFor="commentMessage"></label>
         <input type="text" name="commentMessage" value={commentMessage} onChange={handleCommentMessage}/>
-        <button type='submit'>Edit comment</button>
+        <button className='button_sign_edit' type='submit'>Edit comment</button>
         </form>}
         {user._id === comment.user && 
         <>
-        <button onClick={handleDisplay}>Edit</button>
-        <button onClick={deleteComment}>Delete</button>
+        <div className='btndeleteedit'>
+        <div className='bttndeled'>
+        {display && <button className='button_sign_edit' onClick={handleDisplay}>Edit</button>}
+        </div>
+        <div className='bttndeled'>
+        <button className='button_sign_delete' onClick={deleteComment}>Delete</button>
+        </div>
+        </div>
+        
         </> 
         }
         
