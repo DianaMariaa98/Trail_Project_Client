@@ -63,7 +63,8 @@ function EditMountain() {
             setConditions(response.data.conditions);
             setAccomodation(response.data.accomodation);
             setOverview(response.data.overview);
-            setUserId(response.data.userId)
+            setUserId(response.data.userId);
+            setImage(response.data.image);
             
 
             console.log(response.data)
