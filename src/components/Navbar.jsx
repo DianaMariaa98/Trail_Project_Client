@@ -49,7 +49,7 @@ function NavScrollExample({filterMountains}) {
                 </NavDropdown.Item>
               </NavDropdown>
               {loggedIn && <Nav.Link href="/trails">Post your trail</Nav.Link>}
-              {loggedIn && <NavLink onClick={logout} style={{alignSelf:'center', textDecoration:'none', color:'grey'}}>Logout</NavLink>}
+              {loggedIn && <NavLink onClick={logout} style={{alignSelf:'center', textDecoration:'none', color:'rgba(94, 89, 89, 0.86)'}}>Logout</NavLink>}
             </Nav>
             <Form className="d-flex">
               <Form.Control

@@ -16,8 +16,9 @@ code {
 }
 
 .navigation_bar{
-  background: rgba(115, 122, 108, 0.281);
-  height: 9vh;
+  background: rgb(187,144,70);
+background: linear-gradient(0deg, rgba(187,144,70,0.3730085784313726) 0%, rgba(183,153,87,0.6923363095238095) 100%);
+  height: 11vh;
   border-bottom: 10px 10px black;
 }
 
@@ -54,10 +55,21 @@ code {
   height: 1.5vw;
 }
 .footer{
-  background-color: rgb(8, 10, 6);
+  /* background-color: rgba(124, 91, 25, 0.688); */
+  background: rgb(43,38,22);
+  background: linear-gradient(0deg, rgba(43,38,22,0.975249474789916) 9%, rgba(150,119,71,1) 82%);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
-.footer_p{
+.p_footer{
+  text-align: center;
   color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3vw;
+
 }
 .heart_like{
   border: none;
@@ -72,8 +84,8 @@ code {
 
 .description_image{
   align-self: center;
-  width: 97vw;
-  height: 70vh;
+  width: 50vw;
+  height: 50vh;
 }
 .mount_description_writing{
   font-family:'Noto Sans, sans-serif';
@@ -106,11 +118,31 @@ code {
 .profile_likedimg{
   width: 25vw;
   height: 25vh;
-  box-shadow:10px 5px rgba(172, 190, 171, 0.534), 0em 0 1.4em rgb(107, 134, 112);
+  box-shadow:5px 2px rgba(238, 185, 106, 0.534), 0em 0 0.4em rgb(147, 104, 82);
 }
 .profileName{
-  text-align: center;
+  color: #ad7c5b;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 35vw;
+  height: 40vh;
+  text-align: justify;
+  padding-left: 1.2vw;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border-radius: 0.5vw; 
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  opacity: 0.9;
+  
 }
+.profiletogheter{
+  padding-top: 2vw;
+  display: flex;
+  justify-content: center;
+  
+}
+
+
 
 .mountains_togheter{
   display: flex;
@@ -287,4 +319,24 @@ code {
 
 .editTrail_sec {
   opacity: 0.8;
+}
+.profile_image{
+  width: 8vw;
+  height: 8vw;
+  border-radius: 10vw;
+}
+.p_trails{
+  color: #ad7c5b;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+  
+}
+.p_trails_link{
+  text-decoration: none;
+}
+.profilePage{
+  background-color: rgba(235, 214, 186, 0.438);
+}
+.carouseldiv{
+  height: 79vh;
 }

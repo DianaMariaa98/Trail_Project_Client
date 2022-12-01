@@ -2,12 +2,13 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import mountainSlide1 from '../images/mount_slide1.jpg';
 import mountainSlide2 from '../images/mount_slide2.jpg';
-import mountainSlide3 from '../images/mount_slide3.jpg';
+import mountainSlide3 from '../images/wall_1.jpg';
 
 
 function Home() {
   return (
     <>
+    <div className='carouseldiv'>
     <Carousel>
       <Carousel.Item interval={4000}>
         <img
@@ -45,6 +46,10 @@ function Home() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
+    <div className="footer">
+      <div className='p_footer'>Developed by Diana</div>
+      </div>
 
     </>
   );

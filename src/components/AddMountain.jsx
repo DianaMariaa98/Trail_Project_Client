@@ -97,7 +97,7 @@ function AddTrail(props) {
             setAccomodation('');
             setOverview('');
 
-            navigate("/mountains")
+            navigate("/profile")
 
         } catch (error) {
             console.log(error);

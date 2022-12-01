@@ -70,33 +70,37 @@ function Profile() {
         navigate('/');
     }   */
     return (
-        <div className="ProfilePage">
+        <div className="profilePage">
             {profile && (
             <>
             
+            <div className="profiletogheter">
             <div className="profileName">
+            
             <h1>Your profile page 😊</h1>
-            <p>Username: {profile.name}</p>
+            <p>Hello there : {profile.name}</p>
             <form onSubmit={handleSubmit}>
-            <label htmlFor="profilePicture">Profile Picture:</label>
+            
+            <label htmlFor="profilePicture"></label>
             <input type="file" name="profilePicture" onChange={handleUpload}/>
-            <button type="submit" onClick={handleUpload}>Submit</button>
-            </form>
-            <img src={profile.profilePicture} alt="profile"/>
+            <img className="profile_image"src={profile.profilePicture} alt="profile"/>
+            
             {/* {profilePicture && <img src={profilePicture}></img>} */}
             
-            </div>
+            </form>
             
+            </div>
+            </div>
             
             
             <div className="mountains_togheter">
 
             <div className ="profile_mountains">
-            <p>Created Trails:</p>
+            <p className="p_trails">Created Trails:</p>
             {profile.createdMountains.map((mountain)=> {
                 return (
                     <div className="created_Trails" key ={mountain._id}>
-                    <Link to={`/mountains/${mountain._id}`}><p>{mountain.country}</p></Link>
+                    <Link className="p_trails_link" to={`/mountains/${mountain._id}`}><p className="p_trails">{mountain.country}</p></Link>
                     <img className ="profile_likedimg"src={mountain.image}  alt=""/>
                     
                     </div>
@@ -107,11 +111,11 @@ function Profile() {
 
             
             <div className="liked_Trails">
-            <p>Liked Trails:</p>
+            <p className="p_trails">Liked Trails:</p>
             {profile.likedMountains.map((mountain) => {
                 return (
                     <div className='liked_Trails' key = {mountain._id}>
-                     <Link to={`/mountains/${mountain._id}`}><p>{mountain.mountain_name}</p></Link>
+                     <Link className="p_trails_link"to={`/mountains/${mountain._id}`}><p className="p_trails">{mountain.mountain_name}</p></Link>
                      <img className ="profile_likedimg"src={mountain.image} alt=""/>
                     </div>
                     

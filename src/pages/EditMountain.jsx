@@ -274,9 +274,9 @@ function EditMountain() {
             </div>
 
             <div className='button_sign_addMountain2'>
-            {loading ? <p>Loading...</p> :user._id === userId && <button className="button_sign" onClick={deleteMountain}>
+            {loading ? <p>Loading...</p> :user._id === userId && <p className="button_sign" onClick={deleteMountain}>
                 Delete the trail !
-            </button>}
+            </p>}
             </div>
             </div>
 

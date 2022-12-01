@@ -87,15 +87,18 @@ function MountainsDetails() {
         {mountain && (
             <>
             <div className='mount_description_writing'>
+                
             <div className='mount_description'>
             <h1 className='mountain_name_det'>{mountain.mountain_name}</h1>
             <h2 className='mountain_country_det'>{mountain.country}</h2>
             </div>
             <img className="description_image" alt=""src ={mountain.image}></img>
-            <div className='mount_description_writing'>
-            <p className='mount_details_description'>{mountain.description}</p>
             <div className="div_det">
             <h4 className="mount_details">Distance:</h4><p className='p_class'>{mountain.distance}</p></div>
+
+            <div className='mount_description_writing'>
+            <p className='mount_details_description'>{mountain.description}</p>
+            
             <div className="div_det">
             <h4 className="mount_details">Average Time:</h4><p className='p_class'>{mountain.average_time}</p></div>
             <div className="div_det">
