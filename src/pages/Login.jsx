@@ -36,22 +36,23 @@ function Login(props) {
         }
     }
   return (
-    <div className='LoginPage'>
+    <div className='loginPage'>
         <h1>Login</h1>
 
-        <form onSubmit={handleLoginSubmit}>
+        <form classname ="form_signup" onSubmit={handleLoginSubmit}>
+            <div className='signup_det'>
             <label>Email:</label>
-            <input type="email" name="email" value={email} onChange={handleEmail} placeholder="traveller@gmail.com"/>
+            <input className='input_sign' type="email" name="email" value={email} onChange={handleEmail} placeholder="traveller@gmail.com"/>
 
             <label>Password</label>
-            <input type ="password" name="password" value={password} onChange={handlePassword} placeholder="******"/>
-
-            <button type="submit">Login</button>
+            <input className='input_sign' type ="password" name="password" value={password} onChange={handlePassword} placeholder="******"/>
+            </div>
+            <button className="button_sign" type="submit">Login</button>
         </form>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <p>Don't have an account yet?</p>
-        <Link to="/signup">Sign Up</Link>
+        <p className='p_sign'>Don't have an account yet?</p>
+        <Link to="/signup">Sign Up</Link> 🙂
     </div>
   )
 }

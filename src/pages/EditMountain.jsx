@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate} from 'react-router-dom';
 import { AuthContext } from '../contexts/auth.context';
-import { upload } from "@testing-library/user-event/dist/upload";
+
 
 function EditMountain() {
     const [continent, setContinent] = useState('');
@@ -155,64 +155,134 @@ function EditMountain() {
         }
     }
   return (
-    <div className='EditMountainPage'>
-        <h3>Edit Trail</h3>
+    <div className='editTrail'>
+        <div className='editTrail_sec'>
         <form onSubmit={handleSubmit}>
+            <div className='add_trail'>
+            <h1 className='add_mountain_title'>Want to make some changes?</h1>
 
-            <label htmlFor="continent">Continent:</label>
-            <input type="text" name="continent" value={continent} onChange={handleContinent} />
 
-            <label htmlFor="country">Country:</label>
-            <input type="text" name="country" value={country} onChange={handleCountry} />
+            <label className='edit_trail_second' htmlFor="continent">Continent:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="continent" value={continent} onChange={handleContinent} />
+            </div>
 
-            <label htmlFor="image">Image:</label>
-            <input type="file" name="image" onChange={handleUpload} />
-
-            <label htmlFor="mountain">Mountain:</label>
-            <input type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
-
-            <label htmlFor="description">Description:</label>
-            <input type="text" name="description" value={description} onChange={handleDescription} />
-
-            <label htmlFor="distance">Distance:</label>
-            <input type="text" name="distance" value={distance} onChange={handleDistance} />
-
-            <label htmlFor="average_time">Average Time:</label>
-            <input type="text" name="average_time" value={average_time} onChange={handleAverage_time} />
-
-            <label htmlFor="start_point">Start Point:</label>
-            <input type="text" name="start_point" value={start_point} onChange={handleStart_point} />
-
-            <label htmlFor="end_point">End Point:</label>
-            <input type="text" name="end_point" value={end_point} onChange={handleEnd_point} />
-
-            <label htmlFor="season">Season:</label>
-            <input type="text" name="season" value={season} onChange={handleSeason} />
-
-            <label htmlFor="difficulty">Difficulty:</label>
-            <input type="text" name="difficulty" value={difficulty} onChange={handleDifficulty} />
-
-            <label htmlFor="maps">Maps:</label>
-            <input type="text" name="maps" value={maps} onChange={handleMaps} />
-
-            <label htmlFor="conditions">Conditions:</label>
-            <input type="text" name="conditions" value={conditions} onChange={handleConditions} />
-
-            <label htmlFor="accomodation">Accomodation:</label>
-            <input type="text" name="accomodation" value={accomodation} onChange={handleAccomodation} />
-
-            <label htmlFor="overview">Overview:</label>
-            <input type="text" name="overview" value={overview} onChange={handleOverview} />
-
-            {loading ? <p>Loading...</p> :user._id === userId && <button type='submit'>Edit Trail</button>}
-            {/* {user._id === userId && <button type='submit'>Edit Trail</button>} */}
             
+            <label className='edit_trail_second' htmlFor="country">Country:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="country" value={country} onChange={handleCountry} />
+            </div>
+
+            
+            <label className='edit_trail_second' htmlFor="image">Image:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="file" name="image" onChange={handleUpload} />
+            </div>
+
+            
+            <label className='edit_trail_second'>Mountain:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
+            </div>
+
+            
+            <label className='edit_trail_second' htmlFor="description">Description:</label>
+            <div className='edit_trail_second'>
+            <textarea className='edit_Trail_input'
+              name="description"
+              value={description}
+              cols="30"
+              rows="10"
+              onChange={handleDescription}
+            ></textarea>
+            </div>
+
+            <label className='edit_trail_second' htmlFor="distance">Distance:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="distance" value={distance} onChange={handleDistance} />
+            </div>
+
+
+            <label className='edit_trail_second'>Average Time:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="average_time" value={average_time} onChange={handleAverage_time} />
+            </div>
+
+            <label className='edit_trail_second' htmlFor="start_point">Start Point:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="start_point" value={start_point} onChange={handleStart_point} />
+            </div>
+
+            <label className='edit_trail_second' htmlFor="end_point">End Point:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="end_point" value={end_point} onChange={handleEnd_point} />
+            </div>
+
+            <label className='edit_trail_second' htmlFor="season">Season:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="season" value={season} onChange={handleSeason} />
+            </div>
+
+            <label className='edit_trail_second' htmlFor="difficulty">Difficulty:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="difficulty" value={difficulty} onChange={handleDifficulty} />
+            </div>
+
+            <label className='edit_trail_second' htmlFor="maps">Maps:</label>
+            <div className='edit_trail_second'>
+            <input className='edit_Trail_input' type="text" name="maps" value={maps} onChange={handleMaps} />
+            </div>
+
+            <label className='edit_trail_second' htmlFor="conditions">Conditions:</label>
+            <div className='edit_trail_second'>
+            <textarea className='edit_Trail_input'
+              name="conditions"
+              value={conditions}
+              cols="30"
+              rows="7"
+              onChange={handleConditions}
+            ></textarea>
+            </div>
+
+            <label className='edit_trail_second' htmlFor="accomodation">Accomodation:</label>
+            <div className='edit_trail_second'>
+            <textarea className='edit_Trail_input'
+              name="accomodation"
+              value={accomodation}
+              cols="30"
+              rows="2"
+              onChange={handleAccomodation}
+            ></textarea>
+            </div>
+
+            <label className='edit_trail_second' htmlFor="overview">Overview:</label>
+            <div className='edit_trail_second'>
+            <textarea className='edit_Trail_input'
+              name="overview"
+              value={overview}
+              cols="30"
+              rows="2"
+              onChange={handleOverview}
+            ></textarea>
+            </div>
+            </div>
+
+            <div className ='buttons_together_edit'>
+            <div className='button_sign_addMountain'>
+            {loading ? <p>Loading...</p> :user._id === userId && <button className="button_sign" type='submit'>Edit Trail</button>}
+            {/* {user._id === userId && <button type='submit'>Edit Trail</button>} */}
+            </div>
+
+            <div className='button_sign_addMountain2'>
+            {loading ? <p>Loading...</p> :user._id === userId && <button className="button_sign" onClick={deleteMountain}>
+                Delete the trail !
+            </button>}
+            </div>
+            </div>
 
         </form>
-        
-        {user._id === userId && <button onClick={deleteMountain}>
-                Delete the trail !
-        </button>}
+        </div>
+       
     </div>
   )
 }

@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,17 +6,285 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: red;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
 }
 
 .navigation_bar{
-  background-color: rgb(185, 207, 122);
-  width: 100%;
+  background: rgba(115, 122, 108, 0.281);
+  height: 9vh;
+  border-bottom: 10px 10px black;
 }
+
+.searchNav{
+  text-decoration: none;
+  
+}
+.MountainsListPage{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:1vw 5vw;
+}
+.mountain_list_img{
+  width: 40vw;
+  height: 40vh;
+}
+.mountains_list{
+  padding-top: 2vw;
+  padding-left: 2vw;
+}
+.mountain_name_list{
+  text-decoration: none;
+  color:rgb(62, 130, 56);
+}
+.link_mountain_name_list{
+  text-decoration: none;
+}
+.mountain_list_img{
+  box-shadow:3px 3px rgba(172, 190, 171, 0.534), 0em 0 1.4em rgb(107, 134, 112);
+}
+.searchIcon{
+  height: 1.5vw;
+}
+.footer{
+  background-color: rgb(8, 10, 6);
+}
+.footer_p{
+  color: white;
+}
+.heart_like{
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: rgb(115, 62, 62);
+}
+.heart_like_img{
+  height: 2vw;
+}
+
 .description_image{
-  width: 90vw;
+  align-self: center;
+  width: 97vw;
+  height: 70vh;
+}
+.mount_description_writing{
+  font-family:'Noto Sans, sans-serif';
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+.mount_details_description{
+  font-size: 1.4vw;
+}
+.mount_details{
+  text-decoration: underline;
+  font-size: 1.3vw;
+}
+.form-commentbox{
+  padding-left: 1.5vw;
+}
+.div_det{
+  display: flex;
+}
+.mountainDetails{
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+}
+.p_class{
+  font-size: 1.2vw;
+}
+
+.profile_likedimg{
+  width: 25vw;
+  height: 25vh;
+  box-shadow:10px 5px rgba(172, 190, 171, 0.534), 0em 0 1.4em rgb(107, 134, 112);
+}
+.profileName{
+  text-align: center;
+}
+
+.mountains_togheter{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+.created_Trails{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.liked_Trails{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
+}
+
+
+.signupPage, .loginPage{
+  width: 30%;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 1.2vw; 
+}
+
+.signup_det{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.button_sign{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #c69a7c;
+  border-radius: 1vw;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.signup_det{
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.input_sign{
+  border-radius: 0.3vw;
+  height: 3vw;
+}
+
+.p_sign{
+  padding-top:1vw;
+}
+
+.addTrail{
+  display: flex;
+  justify-content: center;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  background-image: url("./images/abs_ag.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+.addTrail_sec{
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border-radius: 0.5vw; 
+  width: 50vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  opacity: 0.9;
+}
+.add_trail{
+  display: flex;
+  flex-direction: column;
+}
+.add_trail_second{
+  text-align: center;
+}
+.button_sign_addMountain{
+  padding-top: 1vw;
+  padding-left: 21vw;
+}
+.addTrail_input{
+  width: 20vw;
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+}
+.add_mountain_title{
+  text-align: center;
+  font-size: 2vw;
+}
+.editTrail{
+  display: flex;
+  justify-content: center;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2vw;
+}
+.editTrail_sec{
+  
+  box-shadow: 10px 0 20px 2px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border-radius: 0.5vw; 
+  width: 50vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+ 
+}
+.edit_trail_second{
+  text-align: center;
+}
+.edit_Trail_input{
+  width: 20vw;
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+}
+.button_sign_addMountain2{
+  text-align: center;
+  padding-top: 1vw;
+}
+
+.editTrail {
+  background-image: url("./images/abs_ag.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+
+.editTrail_sec {
+  opacity: 0.8;
 }

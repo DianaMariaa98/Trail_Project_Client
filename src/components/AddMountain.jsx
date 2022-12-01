@@ -106,58 +106,125 @@ function AddTrail(props) {
 
 
   return (
-    <div className='AddTrail'>
+    <div className='addTrail'>
+        <div className='addTrail_sec'>
         <form onSubmit={handleSubmit}>
+            <div className='add_trail'>
+            <h1 className='add_mountain_title'>Share your experience with us 🏕️</h1>
+            <label className='add_trail_second' htmlFor="continent">Continent:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="continent" value={continent} onChange={handleContinent} />
+            </div>
 
-            <label htmlFor="continent">Continent:</label>
-            <input type="text" name="continent" value={continent} onChange={handleContinent} />
+            <label className='add_trail_second' htmlFor="country">Country:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="country" value={country} onChange={handleCountry} />
+            </div>
 
-            <label htmlFor="country">Country:</label>
-            <input type="text" name="country" value={country} onChange={handleCountry} />
+            
+            <label className='add_trail_second' htmlFor="mountain">Mountain:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
+            </div>
+            
+            
+            <label className='add_trail_second' htmlFor="image">Image:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="file" name="image" onChange={handleUpload} />
+            </div>
 
-            <label htmlFor="mountain">Mountain:</label>
-            <input type="text" name="mountain" value={mountain_name} onChange={handleMountain_Name} />
+            
+            <label className='add_trail_second' htmlFor="description">Description:</label>
+            <div className='add_trail_second'>
+            <textarea className='addTrail_input'
+              name="description"
+              value={description}
+              cols="30"
+              rows="10"
+              onChange={handleDescription}
+            ></textarea>
+            {/* <input type="text" name="description" value={description} onChange={handleDescription} /> */}
+            </div>
 
-            <label htmlFor="image">Image:</label>
-            <input type="file" name="image" onChange={handleUpload} />
+            <label className='add_trail_second' htmlFor="distance">Distance:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="distance" value={distance} onChange={handleDistance} />
+            </div>
 
-            <label htmlFor="description">Description:</label>
-            <input type="text" name="description" value={description} onChange={handleDescription} />
-
-            <label htmlFor="distance">Distance:</label>
-            <input type="text" name="distance" value={distance} onChange={handleDistance} />
-
-            <label htmlFor="average_time">Average Time:</label>
-            <input type="text" name="average_time" value={average_time} onChange={handleAverage_time} />
-
-            <label htmlFor="start_point">Start Point:</label>
-            <input type="text" name="start_point" value={start_point} onChange={handleStart_point} />
-
-            <label htmlFor="end_point">End Point:</label>
-            <input type="text" name="end_point" value={end_point} onChange={handleEnd_point} />
-
-            <label htmlFor="season">Season:</label>
-            <input type="text" name="season" value={season} onChange={handleSeason} />
-
-            <label htmlFor="difficulty">Difficulty:</label>
-            <input type="text" name="difficulty" value={difficulty} onChange={handleDifficulty} />
-
-            <label htmlFor="maps">Maps:</label>
-            <input type="text" name="maps" value={maps} onChange={handleMaps} />
-
-            <label htmlFor="conditions">Conditions:</label>
-            <input type="text" name="conditions" value={conditions} onChange={handleConditions} />
-
-            <label htmlFor="accomodation">Accomodation:</label>
-            <input type="text" name="accomodation" value={accomodation} onChange={handleAccomodation} />
-
-            <label htmlFor="overview">Overview:</label>
-            <input type="text" name="overview" value={overview} onChange={handleOverview} />
+            <label className='add_trail_second' htmlFor="average_time">Average Time:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="average_time" value={average_time} onChange={handleAverage_time} />
+            </div>
 
 
-            {loading ? <p>Loading...</p> :<button type='submit'>Add your trail !</button>}
+            <label className='add_trail_second' htmlFor="start_point">Start Point:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="start_point" value={start_point} onChange={handleStart_point} />
+            </div>
+
+            <label className='add_trail_second' htmlFor="end_point">End Point:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="end_point" value={end_point} onChange={handleEnd_point} />
+            </div>
+
+            <label className='add_trail_second' htmlFor="season">Season:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="season" value={season} onChange={handleSeason} />
+            </div>
+
+            <label className='add_trail_second' htmlFor="difficulty">Difficulty:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="difficulty" value={difficulty} onChange={handleDifficulty} />
+            </div>
+
+            <label className='add_trail_second' htmlFor="maps">Maps:</label>
+            <div className='add_trail_second'>
+            <input className='addTrail_input' type="text" name="maps" value={maps} onChange={handleMaps} />
+            </div>
+
+            <label className='add_trail_second' htmlFor="conditions">Conditions:</label>
+            <div className='add_trail_second'>
+            <textarea className='addTrail_input'
+              name="conditions"
+              value={conditions}
+              cols="30"
+              rows="7"
+              onChange={handleConditions}
+            ></textarea>
+            {/* <input type="text" name="conditions" value={conditions} onChange={handleConditions} /> */}
+            </div>
+
+            <label className='add_trail_second' htmlFor="accomodation">Accomodation:</label>
+            <div className='add_trail_second'>
+            <textarea className='addTrail_input'
+              name="accomodation"
+              value={accomodation}
+              cols="30"
+              rows="2"
+              onChange={handleAccomodation}
+            ></textarea>
+            {/* <input type="text" name="accomodation" value={accomodation} onChange={handleAccomodation} /> */}
+            </div>
+
+            <label className='add_trail_second' htmlFor="overview">Overview:</label>
+            <div className='add_trail_second'>
+            <textarea className='addTrail_input'
+              name="overview"
+              value={overview}
+              cols="30"
+              rows="2"
+              onChange={handleOverview}
+            ></textarea>
+            {/* <input type="text" name="overview" value={overview} onChange={handleOverview} /> */}
+            </div>
+            </div>
+
+            <div className='button_sign_addMountain'>
+            {loading ? <p>Loading...</p> :<button className="button_sign" type='submit'>Add your trail !</button>}
+            </div>
 
         </form>
+        </div>
     </div>
   )
 }

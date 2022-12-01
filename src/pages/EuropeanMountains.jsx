@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-function Mountains({showMountain}) {
+function EuropeanMountains({showEuropeanMountains}) {
     //declare the state
     const [mountains, setMountains] = useState([]);
 
@@ -13,8 +13,10 @@ function Mountains({showMountain}) {
     const getMountains = async () => {
         try {
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/mountains`);
-            setMountains(response.data);
+            const filteredMountains = response.data.filter(mountain => mountain.continent === 'Europe')
+            setMountains(filteredMountains);
             console.log(response.data);
+
         } catch (error) {
             console.log(error);
         }
@@ -24,9 +26,9 @@ function Mountains({showMountain}) {
     }, [])
   return (
     <div className="MountainsListPage">
-    {showMountain? showMountain.map((mountain) => {
+    {showEuropeanMountains? showEuropeanMountains.map((mountain) => {
         return (
-            <div className='mountains_list' key={mountain._id}>
+            <div key={mountain._id}>
                 <Link className='link_mountain_name_list' to={`/mountains/${mountain._id}`}>
                     <h3 className='mountain_name_list'>{mountain.mountain_name}</h3>
                     <img className ="mountain_list_img" src={mountain.image} alt="MountainDetImage"></img>
@@ -38,8 +40,8 @@ function Mountains({showMountain}) {
         return (
             <div className='mountains_list' key={mountain._id}>
                 <Link className='link_mountain_name_list' to={`/mountains/${mountain._id}`}>
-                    <h3 className='mountain_name_list'>{mountain.mountain_name}</h3>
-                    <img className ="mountain_list_img" src={mountain.image} alt="MountainDetImage"></img>
+                  <h3 className='mountain_name_list'>{mountain.mountain_name}</h3>
+                  <img className ="mountain_list_img" src={mountain.image} alt="MountainDetImage"></img>
                 </Link>
             </div>
         )
@@ -51,4 +53,4 @@ function Mountains({showMountain}) {
 
 
 
-export default Mountains
+export default EuropeanMountains;
