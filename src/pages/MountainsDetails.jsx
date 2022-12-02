@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../contexts/auth.context';
 import Comment from '../components/Comment';
@@ -14,6 +14,7 @@ function MountainsDetails() {
     const [comments, setComments] = useState(null);
    
     const handleComment = (e) => setComment(e.target.value);
+    const navigate = useNavigate();
 
     const {id} = useParams();
     const {user} = useContext(AuthContext);
@@ -74,7 +75,7 @@ function MountainsDetails() {
          const storedToken = localStorage.getItem('authToken');
          const likes = await axios.post(`${process.env.REACT_APP_API_URL}/likes/${id}`, {userId:user._id}, {headers: {Authorization: `Bearer ${storedToken}`}}) 
          console.log(likes.data)
-         
+         navigate('/profile');
          
         } catch (error) {
             console.log(error);
@@ -122,7 +123,7 @@ function MountainsDetails() {
 
             {user && user._id === userId && <Link to={`/editTrail/${id}`}>Edit Trail</Link>}
             </div>
-            <Link to ="/profile"><button className="heart_like" onClick ={addLikes}>Add to favorites <img className="heart_like_img" alt="" src={heart_icon}></img></button></Link>
+            <button className="heart_like" onClick ={addLikes}>Add to favorites <img className="heart_like_img" alt="" src={heart_icon}></img></button>
             </div>
             
             
