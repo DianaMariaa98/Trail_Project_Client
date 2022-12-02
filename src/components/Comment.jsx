@@ -45,7 +45,7 @@ function Comment(props) {
         <input type="text" name="commentMessage" value={commentMessage} onChange={handleCommentMessage}/>
         <button className='button_sign_edit' type='submit'>Edit comment</button>
         </form>}
-        {user._id === comment.user && 
+        {user._id === comment.user._id && 
         <>
         <div className='btndeleteedit'>
         <div className='bttndeled'>
